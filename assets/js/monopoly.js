@@ -17,6 +17,9 @@ function addplayer() {
 	}
 }
 function submitsetup(x) {
+	if (playerlist.length < 2) {
+		document.getElementById("setuperror").innerHTML = "Add at least two Players!";
+	}
 	document.getElementById("money").innerHTML = "<h1>Game in progress</h1>";
 	var i = 0;
 	do {
