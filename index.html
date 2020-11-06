@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Monopoly</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+			<script src="assets/js/monopoly.js"></script>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner" id="money">
+								<h1>Set Up</h1>
+								<p>Before you start a new game, please add participants of the game and optionally select extra accounts.</p>
+									<center>
+								<div id="setupform">
+											<div id="playerinputs"><p><input type="text" name="playername" id="playername" placeholder="Username 1" /></p></div>
+											<p id="setuperror" style="color:#ff8080;"></p>
+											<p><input type="checkbox" id="freeparking" name="freeparking">
+											<label for="freeparking">Free Parking</label></p>
+											<p><input type="checkbox" id="bank" name="bank" disabled checked>
+											<label for="bank">Bank (Cannot be disabled)</label></p>
+									
+										<p><input type="button" value="Add Player" class="primary" id="addplayer" onClick="addplayer();" /></p>
+										<p><input type="button" value="Start Game" class="primary" id="submitsetup" onClick="submitsetup(document.getElementById('freeparking').checked);" /></p>
+								</div></center>
+							</div>
+						</div>
+						<nav>
+							<ul id="playernav"><!--
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#work">Work</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
+							-->
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+							<article id="transfermoney">
+								<div id="transfer">
+									<h2 class="major" id="transferh2"></h2>
+									<p><input type="text" name="amount" id="amount" placeholder="Amount in Integers" /></p>
+									<p><select name="partner" id="partner">
+										<option value="69420">- Select a Recipant -</option>
+									</select></p>
+									<p><input type="button" value="Send Money" class="primary" id="sendmoney" onClick="sendmoney();" /></p>
+									<p id="transfererror" style="color:#ff8080;"></p>
+									<p id="transfersuccess" style="color:#80ff80;"></p>
+								</div>
+							</article>
+							<article id="misc">
+								<div id="management">
+									<h2>Give Money (as Bank)</h2>
+										<p><input type="text" name="amountbank" id="amountbank" placeholder="Amount in Integers" /></p>
+										<p><select name="partnerbank" id="partnerbank">
+											<option value="69420">- Select a Recipant -</option>
+										</select></p>
+										<p><input type="button" value="Send Money" class="primary" id="sendmoneybank" onClick="sendmoneybank();" /></p>
+										<p id="transfererrorbank" style="color:#ff8080;"></p>
+										<p id="transfersuccessbank" style="color:#80ff80;"></p>
+									<h2>Free Parking</h2>
+										<p>Transfer all the money stored in "Free Parking" to a player.</p>
+										<p><select name="partnerfree" id="partnerfree">
+											<option value="69420">- Select a Recipant -</option>
+										</select></p>
+										<p><input type="button" value="Send Money" class="primary" id="sendmoneyfree" onClick="sendmoneyfree();" /></p>
+										<p id="transfererrorfree" style="color:#ff8080;"></p>
+										<p id="transfersuccessfree" style="color:#80ff80;"></p>
+								</div>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; lucx1. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
