@@ -19,33 +19,34 @@ function addplayer() {
 function submitsetup(x) {
 	if (playerlist.length < 2) {
 		document.getElementById("setuperror").innerHTML = "Add at least two Players!";
+	} else {
+		document.getElementById("money").innerHTML = "<h1>Game in progress</h1>";
+		var i = 0;
+		do {
+			playermoney.push(1500);
+			document.getElementById("money").innerHTML = document.getElementById("money").innerHTML + "<p>" + playerlist[i] + ": " + playermoney[i] + " M</p>";
+			document.getElementById("playernav").innerHTML = document.getElementById("playernav").innerHTML + "<li><a href='#transfermoney' onClick='starttransfer(" + i + ")'>" + playerlist[i] + "</a></li>"
+			i++;
+		} while (i < playerlist.length);
+		if (x) {
+			playerlist.push("Free Parking");
+			playermoney.push(0);
+			document.getElementById("money").innerHTML = document.getElementById("money").innerHTML + "<p>" + playerlist[i] + ": " + playermoney[i] + " M</p>";
+		}
+		document.getElementById("playernav").innerHTML = document.getElementById("playernav").innerHTML + "<li><a href='#misc'>Management</a></li>";
+		i = 0;
+		do {
+			document.getElementById("partner").innerHTML = document.getElementById("partner").innerHTML + '<option value="' + i + '">' + playerlist[i] + '</option>';
+			document.getElementById("partnerbank").innerHTML = document.getElementById("partnerbank").innerHTML + '<option value="' + i + '">' + playerlist[i] + '</option>';
+			i++;
+		} while (i < playerlist.length);
+		i = 0;
+		do {
+			document.getElementById("partnerfree").innerHTML = document.getElementById("partnerfree").innerHTML + '<option value="' + i + '">' + playerlist[i] + '</option>';
+			i++;
+		} while (i < (playerlist.length - 1));
+		document.getElementById("partner").innerHTML = document.getElementById("partner").innerHTML + '<option value="' + 42069 + '">Bank</option>';
 	}
-	document.getElementById("money").innerHTML = "<h1>Game in progress</h1>";
-	var i = 0;
-	do {
-		playermoney.push(1500);
-		document.getElementById("money").innerHTML = document.getElementById("money").innerHTML + "<p>" + playerlist[i] + ": " + playermoney[i] + " M</p>";
-		document.getElementById("playernav").innerHTML = document.getElementById("playernav").innerHTML + "<li><a href='#transfermoney' onClick='starttransfer(" + i + ")'>" + playerlist[i] + "</a></li>"
-		i++;
-	} while (i < playerlist.length);
-	if (x) {
-		playerlist.push("Free Parking");
-		playermoney.push(0);
-		document.getElementById("money").innerHTML = document.getElementById("money").innerHTML + "<p>" + playerlist[i] + ": " + playermoney[i] + " M</p>";
-	}
-	document.getElementById("playernav").innerHTML = document.getElementById("playernav").innerHTML + "<li><a href='#misc'>Management</a></li>";
-	i = 0;
-	do {
-		document.getElementById("partner").innerHTML = document.getElementById("partner").innerHTML + '<option value="' + i + '">' + playerlist[i] + '</option>';
-		document.getElementById("partnerbank").innerHTML = document.getElementById("partnerbank").innerHTML + '<option value="' + i + '">' + playerlist[i] + '</option>';
-		i++;
-	} while (i < playerlist.length);
-	i = 0;
-	do {
-		document.getElementById("partnerfree").innerHTML = document.getElementById("partnerfree").innerHTML + '<option value="' + i + '">' + playerlist[i] + '</option>';
-		i++;
-	} while (i < (playerlist.length - 1));
-	document.getElementById("partner").innerHTML = document.getElementById("partner").innerHTML + '<option value="' + 42069 + '">Bank</option>';
 }
 function starttransfer(x) {
 	document.getElementById("transferh2").innerHTML = "Transfer Money as " + playerlist[x];
