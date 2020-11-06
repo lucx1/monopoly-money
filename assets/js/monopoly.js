@@ -102,7 +102,7 @@ function sendmoneyfree() {
 		document.getElementById("transfersuccessfree").innerHTML = "";
 	} else {
 		playermoney[document.getElementById("partnerfree").value] = playermoney[document.getElementById("partnerfree").value] + money;
-		playermoney[playerlist.length -1] = 0
+		playermoney[playerlist.length -1] = 0;
 		document.getElementById("transfersuccessfree").innerHTML = "You successfully transferred " + money + " M to " + playerlist[document.getElementById("partnerfree").value] + " for parking for free!";
 		document.getElementById("transfererrorfree").innerHTML = "";
 		var i = 0;
