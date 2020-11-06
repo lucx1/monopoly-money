@@ -5,6 +5,8 @@ function addplayer() {
 		document.getElementById("setuperror").innerHTML = "Free Parking is an invalid username!";
 	} else if (document.getElementById("playername").value == "Management") {
 		document.getElementById("setuperror").innerHTML = "Management is an invalid username!";
+	} else if (document.getElementById("playername").value == "Bank") {
+		document.getElementById("setuperror").innerHTML = "Bank is an invalid username!";
 	} else if (playerlist.includes(document.getElementById("playername").value)) {
 		document.getElementById("setuperror").innerHTML = document.getElementById("playername").value + " already exists!";
 	} else {
