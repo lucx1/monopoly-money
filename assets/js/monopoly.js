@@ -60,7 +60,7 @@ function sendmoney() {
 		document.getElementById("transfererror").innerHTML = "You cannot send a negative amount!";
 		document.getElementById("transfersuccess").innerHTML = "";
 	} else if (document.getElementById("partner").value == 69420) {
-		document.getElementById("transfererror").innerHTML = "Select a recipant!";
+		document.getElementById("transfererror").innerHTML = "Select a Recipient!";
 		document.getElementById("transfersuccess").innerHTML = "";
 	} else {
 		playermoney[transferring] = playermoney[transferring] - money;
@@ -85,7 +85,7 @@ function sendmoneybank() {
 		document.getElementById("transfererrorbank").innerHTML = "You cannot send a negative amount!";
 		document.getElementById("transfersuccessbank").innerHTML = "";
 	} else if (document.getElementById("partnerbank").value == 69420) {
-		document.getElementById("transfererrorbank").innerHTML = "Select a recipant!";
+		document.getElementById("transfererrorbank").innerHTML = "Select a Recipient!";
 		document.getElementById("transfersuccessbank").innerHTML = "";
 	} else {
 		playermoney[document.getElementById("partnerbank").value] = playermoney[document.getElementById("partnerbank").value] + money;
@@ -98,7 +98,7 @@ function sendmoneybank() {
 function sendmoneyfree() {
 	var money = playermoney[playerlist.length - 1];
 	if (document.getElementById("partnerfree").value == 69420) {
-		document.getElementById("transfererrorfree").innerHTML = "Select a recipant!";
+		document.getElementById("transfererrorfree").innerHTML = "Select a Recipient!";
 		document.getElementById("transfersuccessfree").innerHTML = "";
 	} else {
 		playermoney[document.getElementById("partnerfree").value] = playermoney[document.getElementById("partnerfree").value] + money;
